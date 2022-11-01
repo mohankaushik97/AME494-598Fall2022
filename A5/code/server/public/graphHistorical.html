@@ -22,18 +22,14 @@ function start(){
 }
 
 function updateData(){
+	var f = document.getElementById("datetimeSelect");
 	var e = document.getElementById("duration");
-  if(lastAddedTS==0){
-	var to = e.value;
-  }else {
-	var to = lastAddedTS
-  }
-  var from = to-e.value;
+  var to = new Date(f.text).getTime;
+  var from = to-e.value*60*1000;
 //   console.log(to);
 	var url = "./getData?from=" + from + "&to=" + to;
 	var callback = function(data){
 		var obj = JSON.parse(data);
-		console.log(obj);
 		var columns = [["x"],["Temperature"],["Humidity"]]
 		for(var i = 0; i < obj.length; i++){
 			var timestamp = parseInt(obj[i].time);
