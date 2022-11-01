@@ -25,7 +25,6 @@ function updateData(){
 	var e = document.getElementById("duration");
   var from = lastAddedTS-e.value;
   var to = lastAddedTS;
-  console.log(from);
   console.log(to);
 	var url = "./getData?from=" + from + "&to=" + to;
 	var callback = function(data){
@@ -33,6 +32,7 @@ function updateData(){
 		var columns = [["x"],["Temperature"],["Humidity"]]
 		for(var i = 0; i < obj.length; i++){
 			var timestamp = parseInt(obj[i].time);
+			console.log(timestamp);
 			columns[0].push(getTSInFormat(timestamp));
 			columns[1].push(obj[i].t || 0);
 			columns[2].push(obj[i].h || 0);
