@@ -22,8 +22,10 @@ function start(){
 }
 
 function updateData(){
-  var from = 0;
-  var to = new Date().getTime();
+	var e = document.getElementById("ddlViewBy");
+	var value = e.value;
+  var from = lastAddedTS-value;
+  var to = lastAddedTS;
 	var url = "./getData?from=" + from + "&to=" + to;
 	var callback = function(data){
 		var obj = JSON.parse(data);
