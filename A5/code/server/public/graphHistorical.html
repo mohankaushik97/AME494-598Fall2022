@@ -24,8 +24,8 @@ function start(){
 function updateData(){
 	var f = document.getElementById("datetimeSelect");
 	var e = document.getElementById("duration");
-	console.log(f);
-  var to = new Date(f.text).getTime();
+	console.log(f.value);
+  var to = new Date(f.value).getTime();
   var from = to-e.value*60*1000;
   console.log(to);
 	var url = "./getData?from=" + from + "&to=" + to;
