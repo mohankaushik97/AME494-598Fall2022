@@ -24,7 +24,7 @@ function start(){
 function updateData(){
 	var f = document.getElementById("datetimeSelect");
 	var e = document.getElementById("duration");
-	console.log(f.text);
+	console.log(f);
   var to = new Date(f.text).getTime();
   var from = to-e.value*60*1000;
   console.log(to);
