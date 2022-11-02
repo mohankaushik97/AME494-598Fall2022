@@ -30,6 +30,7 @@ function updateData(){
 	var url = "./getData?from=" + from + "&to=" + to;
 	var callback = function(data){
 		var obj = JSON.parse(data);
+		console.log("Obj: ",obj);
 		var columns = [["x"],["Temperature"],["Humidity"]]
 		for(var i = 0; i < obj.length; i++){
 			var timestamp = parseInt(obj[i].time);
